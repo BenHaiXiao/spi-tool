@@ -15,7 +15,7 @@ Java SPI 全称为 (Service Provider Interface) ,是JDK内置的一种服务提�
 
 1. META-INF/spi-tool/  目录命名规则
 目录为接口名称(需要进行SPI扩展的接口)，例如：
-
+  
   ```com.github.benhaixiao.spi.tool.ext1.Ext1```
   
 目录内容为接口实现，实现名称和具体实现类，例如：
@@ -29,5 +29,8 @@ Java SPI 全称为 (Service Provider Interface) ,是JDK内置的一种服务提�
 2. 获取实现类方法：
     ```
     Ext1 ext1 = SPILoader.getSPILoader(Ext1.class).getSPI("impl1")
+    
     ```
-
+**注意**：需要进行SPI扩展的接口上，必须打上SPI注解
+```@SPI
+```
